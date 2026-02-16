@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Проверка аренды электровелосипеда Happybike">
+  <title>Happybike - Проверка аренды</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="logo-wrap">
+      <img src="./logo/black.png" alt="Happybike" class="logo-image logo">
+      <span class="logo-text">Happybike</span>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="card-shell" aria-labelledby="main-title">
+      <h1 id="main-title">Проверка аренды электровелосипеда</h1>
+      <p class="subtitle">Введите имя или кодовое слово, чтобы узнать статус аренды</p>
+
+      <form id="rental-form" class="rental-form" novalidate>
+        <label for="query" class="sr-only">Введите ФИО или кодовое слово</label>
+        <input
+          type="text"
+          id="query"
+          name="query"
+          autocomplete="off"
+          placeholder="Введите ФИО или кодовое слово"
+          aria-describedby="form-feedback"
+        >
+        <button type="submit" id="check-btn">Проверить аренду</button>
+      </form>
+
+      <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+
+      <article id="result-card" class="result-card" aria-live="polite" aria-hidden="true">
+        <h2>Результат проверки</h2>
+        <dl class="result-grid">
+          <div>
+            <dt>Имя клиента</dt>
+            <dd id="client-name">-</dd>
+          </div>
+          <div>
+            <dt>Номер велосипеда</dt>
+            <dd id="bike-number">-</dd>
+          </div>
+          <div>
+            <dt>Дата начала аренды</dt>
+            <dd id="start-date">-</dd>
+          </div>
+          <div>
+            <dt>Дата до которой оплачено</dt>
+            <dd id="paid-until-date">-</dd>
+          </div>
+          <div>
+            <dt>Недель к оплате</dt>
+            <dd id="weeks-to-pay">-</dd>
+          </div>
+          <div>
+            <dt>Сумма к оплате</dt>
+            <dd id="payment-amount">-</dd>
+          </div>
+        </dl>
+      </article>
+
+      <div class="future-actions">
+        <button type="button" class="ghost-btn" disabled aria-disabled="true" title="Будет доступно в следующей версии">
+          Посмотреть доступные велосипеды
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
